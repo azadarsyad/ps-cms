@@ -15,6 +15,10 @@ class CreateAgeGroupsTable extends Migration
     {
         Schema::create('age_groups', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('brand_id')->unsigned();
+            $table->integer('min_age');
+            $table->integer('max_age');
+            $table->string('category');
             $table->timestamps();
         });
     }
